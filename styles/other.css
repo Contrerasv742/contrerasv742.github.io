@@ -90,6 +90,7 @@ header {
 .education-header {
     text-align: center;
     margin-bottom: 3rem;
+    flex: horizontal;
 }
 
 .education-title {
@@ -101,6 +102,11 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.other {
+    background: none;
+    background-size: none;
 }
 
 .education-subtitle {
