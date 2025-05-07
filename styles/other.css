@@ -1,0 +1,352 @@
+:root {
+    --bg-color: #0d1117;
+    --text-color: #f0f6fc;
+    --gradient-start: #ff0066;
+    --gradient-mid: #cc33ff;
+    --gradient-end: #9933ff;
+    --card-bg: #161b22;
+    --card-border: #30363d;
+    --header-bg: #161b22;
+}
+
+@keyframes gradientAnimation {
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.ascii-container {
+    display: flex;
+    justify-content: center;
+}
+
+.ascii-art {
+    font-family: monospace;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    white-space: pre;
+    text-align: center;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #d8b9ff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(204, 51, 255, 0.3);
+}
+
+.education-section {
+    padding: 4rem 0 2rem;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.education-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.education-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.education-subtitle {
+    font-size: 1.3rem;
+    color: #d8b9ff;
+    margin-bottom: 0.5rem;
+}
+
+.education-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.education-detail {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--card-border);
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    color: #8b949e;
+    margin-bottom: 0.5rem;
+}
+
+.detail-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.courses-section {
+    padding: 4rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.course-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--card-border);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.course-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.course-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+}
+
+.course-title {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.course-content {
+    padding: 1.5rem;
+}
+
+.course-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.course-tag {
+    padding: 0.3rem 0.8rem;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    opacity: 0.8;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: white;
+}
+
+.interests-section {
+    padding: 4rem 0;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.interest-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.interest-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--card-border);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.interest-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.interest-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.interest-title {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+}
+
+.interest-icon {
+    margin-right: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.interest-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.interest-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.interest-tools {
+    margin-top: auto;
+}
+
+.interest-tool-title {
+    font-size: 1rem;
+    color: #d8b9ff;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.interest-tool-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+    border-radius: 2px;
+}
+
+.interest-tool-list {
+    list-style: none;
+}
+
+.interest-tool-item {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.interest-tool-item::before {
+    content: "•";
+    color: var(--gradient-mid);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--header-bg);
+    border-top: 1px solid var(--card-border);
+}
+
+@media (max-width: 768px) {
+    .ascii-art {
+        font-size: 0.5rem;
+    }
+
+    .education-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .education-detail {
+        width: 100%;
+    }
+
+    .interest-cards {
+        grid-template-columns: 1fr;
+    }
+}

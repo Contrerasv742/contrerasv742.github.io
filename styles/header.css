@@ -1,0 +1,73 @@
+.header {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-button {
+    padding: 0.6rem 1.2rem;
+    background-color: white;
+    color: #333;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button.active {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.nav-button.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    z-index: -1;
+    border-radius: 30px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-button {
+        width: 80%;
+        text-align: center;
+    }
+}
+
