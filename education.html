@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education & Courses</title>
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/other.css">
+    <script src="scripts/cards.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="nav-buttons">
+                    <a href="index.html" class="nav-button">Home</a>
+                    <a href="projects.html" class="nav-button">Projects</a>
+                    <a href="education.html" class="nav-button active">Education</a>
+                    <a href="interests.html" class="nav-button">Interests</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="ascii-container">
+            <pre class="ascii-art">
+ _____     _                 _   _             
+| ____|   | |               | | (_)            
+| |__   __| |_   _  ___ __ _| |_ _  ___  _ __  
+|  __| / _` | | | |/ __/ _` | __| |/ _ \| '_ \ 
+| |___| (_| | |_| | (_| (_| | |_| | (_) | | | |
+|______\__,_|\__,_|\___\__,_|\__|_|\___/|_| |_|
+            </pre>
+        </div>
+    </div>
+    
+    <section class="education-section">
+        <div class="container">
+            <div class="education-header">
+                <h2 class="education-title">Academic Background 🔭</h2>
+                <p class="education-subtitle">University of California, Santa Cruz</p>
+            </div>
+            
+            <div class="education-details">
+                <div class="education-detail">
+                    <p class="detail-label">Degree</p>
+                    <p class="detail-value">Computer Engineering</p>
+                </div>
+                
+                <div class="education-detail">
+                    <p class="detail-label">Concentration</p>
+                    <p class="detail-value">Computer Networks</p>
+                </div>
+                
+                <div class="education-detail">
+                    <p class="detail-label">Status</p>
+                    <p class="detail-value">Undergraduate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="courses-section container">
+        <div class="section-header">
+            <h2 class="section-title">Courses Taken</h2>
+        </div>
+        
+        <!-- Course 1 -->
+        <div class="course-card">
+            <div class="course-header">
+                <h3 class="course-title">CSE 130 (Computer Systems)</h3>
+            </div>
+            <div class="course-content">
+                <p class="course-description">
+                    Created a multi-threaded HTTP server capable of taking 30+ requests in parallel. 
+                    Developed a strong understanding of atomicity and coherency in order to effectively 
+                    apply mutexes to enable parallel processing.
+                </p>
+                <div class="course-tags">
+                    <span class="course-tag">Parallel Processing</span>
+                    <span class="course-tag">Mutexes</span>
+                    <span class="course-tag">HTTP Server</span>
+                    <span class="course-tag">Multi-threading</span>
+                    <span class="course-tag">Atomicity</span>
+                    <span class="course-tag">Coherency</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Course 2 -->
+        <div class="course-card">
+            <div class="course-header">
+                <h3 class="course-title">CSE 150 (Computer Networks)</h3>
+            </div>
+            <div class="course-content">
+                <p class="course-description">
+                    Worked on creating complex and large systems in Mininet. The course focused on using
+                    Python to create firewalls, routers, and switches. Gained practical experience implementing
+                    network protocols and understanding network architecture.
+                </p>
+                <div class="course-tags">
+                    <span class="course-tag">Mininet</span>
+                    <span class="course-tag">Python</span>
+                    <span class="course-tag">Firewalls</span>
+                    <span class="course-tag">Routers</span>
+                    <span class="course-tag">Switches</span>
+                    <span class="course-tag">Network Protocols</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Course 3 -->
+        <div class="course-card">
+            <div class="course-header">
+                <h3 class="course-title">CSE 100 (Logic Design)</h3>
+            </div>
+            <div class="course-content">
+                <p class="course-description">
+                    Focused on learning embedded programming for programming to an FPGA board. The course
+                    taught Verilog, open source Verilator, and the ins and outs of reading documentation to properly 
+                    program to an FPGA board. Developed skills in digital circuit design and implementation.
+                </p>
+                <div class="course-tags">
+                    <span class="course-tag">FPGA</span>
+                    <span class="course-tag">Verilog</span>
+                    <span class="course-tag">Verilator</span>
+                    <span class="course-tag">Embedded Programming</span>
+                    <span class="course-tag">Digital Circuit Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 My Education Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        window.addEventListener('load', handleScroll);
+    </script>
+</body>
+</html>
