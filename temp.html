@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Snackabato</title>
+        <style>
+            :root {
+                --bg-color: #0d1117;
+                --text-color: #f0f6fc;
+                --gradient-start: #ff0066;
+                --gradient-mid: #cc33ff;
+                --gradient-end: #9933ff;
+                --card-bg: #161b22;
+                --card-border: #30363d;
+                --header-bg: #161b22;
+            }
+
+            @keyframes gradientAnimation {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+                background-color: var(--bg-color);
+                color: var(--text-color);
+                line-height: 1.6;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+
+            /* Header Styles */
+            .header {
+                background-color: var(--card-bg);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--card-border);
+            }
+
+            .header-content {
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav-buttons {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-button {
+                padding: 0.6rem 1.2rem;
+                background-color: white;
+                color: #333;
+                border-radius: 30px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                font-size: 0.9rem;
+            }
+
+            .nav-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-button.active {
+                background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+                color: white;
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+            }
+
+            .nav-button.active::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+                z-index: -1;
+                border-radius: 30px;
+            }
+
+            /* ASCII Art */
+            .ascii-container {
+                display: flex;
+                justify-content: center;
+                margin: 2rem 0;
+            }
+
+            .ascii-art {
+                font-family: monospace;
+                font-size: 0.8rem;
+                line-height: 1.2;
+                white-space: pre;
+                text-align: center;
+                background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+                background-size: 200% 200%;
+                animation: gradientAnimation 3s ease infinite;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                padding: 1rem;
+                border-radius: 8px;
+                margin: 0;
+                font-weight: bold;
+            }
+
+            /* Section Styles */
+            .interests-section {
+                padding: 4rem 0;
+                background-color: rgba(255, 255, 255, 0.02);
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+                background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            /* Contributors Section - Single Column Layout */
+            .contributors-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .contributor-card {
+                background-color: var(--card-bg);
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+                border: 1px solid var(--card-border);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                transition: all 0.3s ease;
+            }
+
+            .contributor-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .contributor-header {
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--card-border);
+                background-color: rgba(255, 255, 255, 0.02);
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .contributor-header::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 5px;
+                height: 100%;
+                background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+            }
+
+            .contributor-avatar {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid transparent;
+                background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+                           linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) border-box;
+                flex-shrink: 0;
+                margin-left: 1rem;
+            }
+
+            .contributor-info {
+                flex: 1;
+            }
+
+            .contributor-name {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-weight: 600;
+            }
+
+            .contributor-role {
+                color: #d8b9ff;
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+
+            .contributor-content {
+                padding: 1.5rem;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contributor-description {
+                font-size: 1rem;
+                color: var(--text-color);
+                margin-bottom: 1.5rem;
+                line-height: 1.7;
+            }
+
+            .contributor-actions {
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            .contributor-btn {
+                padding: 0.6rem 1.2rem;
+                border: none;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                cursor: pointer;
+                min-width: 120px;
+                justify-content: center;
+            }
+
+            .contributor-btn.resume {
+                background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+                color: white;
+                box-shadow: 0 4px 15px rgba(255, 0, 102, 0.3);
+            }
+
+            .contributor-btn.resume:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(255, 0, 102, 0.4);
+            }
+
+            .contributor-btn.website {
+                background: linear-gradient(135deg, var(--gradient-mid), var(--gradient-end));
+                color: white;
+                box-shadow: 0 4px 15px rgba(204, 51, 255, 0.3);
+            }
+
+            .contributor-btn.website:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(204, 51, 255, 0.4);
+            }
+
+            .contributor-btn-icon {
+                font-size: 1rem;
+            }
+
+            .contributor-tools {
+                margin-top: auto;
+            }
+
+            .contributor-tool-title {
+                font-size: 1rem;
+                color: #d8b9ff;
+                margin-bottom: 0.8rem;
+                position: relative;
+                padding-left: 1rem;
+            }
+
+            .contributor-tool-title::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+                border-radius: 2px;
+            }
+
+            .contributor-tool-list {
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .contributor-tool-item {
+                padding: 0.3rem 0.8rem;
+                background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+                opacity: 0.8;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                color: white;
+            }
+
+            /* Interest Cards - Grid Layout */
+            .interest-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+
+            .interest-card {
+                background-color: var(--card-bg);
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+                border: 1px solid var(--card-border);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                transition: all 0.3s ease;
+            }
+
+            .interest-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .interest-header {
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--card-border);
+                background-color: rgba(255, 255, 255, 0.02);
+            }
+
+            .interest-title {
+                font-size: 1.3rem;
+                margin-bottom: 0;
+                background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                display: flex;
+                align-items: center;
+            }
+
+            .interest-icon {
+                margin-right: 0.8rem;
+                font-size: 1.5rem;
+            }
+
+            .interest-content {
+                padding: 1.5rem;
+                flex-grow: 1;
+            }
+
+            .interest-description {
+                margin-bottom: 1rem;
+                line-height: 1.7;
+                color: var(--text-color);
+            }
+
+            .interest-tools {
+                margin-top: auto;
+            }
+
+            .interest-tool-title {
+                font-size: 1rem;
+                color: #d8b9ff;
+                margin-bottom: 0.8rem;
+                position: relative;
+                padding-left: 1rem;
+            }
+
+            .interest-tool-title::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+                border-radius: 2px;
+            }
+
+            .interest-tool-list {
+                list-style: none;
+            }
+
+            .interest-tool-item {
+                margin-bottom: 0.5rem;
+                display: flex;
+                align-items: center;
+                color: var(--text-color);
+            }
+
+            .interest-tool-item::before {
+                content: "•";
+                color: var(--gradient-mid);
+                margin-right: 0.5rem;
+                font-weight: bold;
+            }
+
+            /* Footer */
+            footer {
+                text-align: center;
+                padding: 2rem 0;
+                background-color: var(--header-bg);
+                border-top: 1px solid var(--card-border);
+                color: var(--text-color);
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .ascii-art {
+                    font-size: 0.5rem;
+                }
+
+                .nav-buttons {
+                    flex-direction: column;
+                    width: 100%;
+                    align-items: center;
+                }
+
+                .nav-button {
+                    width: 80%;
+                    text-align: center;
+                }
+
+                .interest-cards {
+                    grid-template-columns: 1fr;
+                }
+
+                .contributors-cards {
+                    padding: 0 1rem;
+                }
+
+                .container {
+                    padding: 0 1rem;
+                }
+            }
+.contributor-actions {
+flex-direction: column;
+gap: 0.8rem;
+}
+
+.contributor-btn {
+width: 100%;
+}                .contributor-avatar {
+width: 100px;
+height: 100px;
+}
+}
+
+@media (max-width: 480px) {
+.contributor-header {
+flex-direction: column;
+text-align: center;
+gap: 1rem;
+}
+
+.contributor-avatar {
+margin-left: 0;
+}
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="nav-buttons">
+                        <a href="index.html" class="nav-button">Home</a>
+                        <a href="projects.html" class="nav-button">Projects</a>
+                        <a href="education.html" class="nav-button">Education</a>
+                        <a href="interests.html" class="nav-button active">Interests</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="ascii-container">
+                <pre class="ascii-art">
+ ________  ________   ________  ________  ___  __    ________  ________  ________  _________  ________          ________  ________   ________  ________  ________  ___  ________   ________     
+|\   ____\|\   ___  \|\   __  \|\   ____\|\  \|\  \ |\   __  \|\   __  \|\   __  \|\___   ___\\   __  \        |\   __  \|\   ____\ |\   ____\|\   __  \|\   ____\|\  \|\   ___  \|\   __  \    
+\ \  \___|\ \  \\ \  \ \  \|\  \ \  \___|\ \  \/  /|\ \  \|\  \ \  \|\ /\ \  \|\  \|___ \  \_\ \  \|\  \       \ \  \|\  \ \  \___|_\ \  \___|\ \  \|\  \ \  \___|\ \  \ \  \\ \  \ \  \|\  \   
+ \ \_____  \ \  \\ \  \ \   __  \ \  \    \ \   ___  \ \   __  \ \   __  \ \   __  \   \ \  \ \ \  \\\  \       \ \   __  \ \_____  \\ \_____  \ \   __  \ \_____  \ \  \ \  \\ \  \ \  \\\  \  
+  \|____|\  \ \  \\ \  \ \  \ \  \ \  \____\ \  \\ \  \ \  \ \  \ \  \|\  \ \  \ \  \   \ \  \ \ \  \\\  \       \ \  \ \  \|____|\  \\|____|\  \ \  \ \  \|____|\  \ \  \ \  \\ \  \ \  \\\  \ 
+    ____\_\  \ \__\\ \__\ \__\ \__\ \_______\ \__\\ \__\ \__\ \__\ \_______\ \__\ \__\   \ \__\ \ \_______\       \ \__\ \__\____\_\  \ ____\_\  \ \__\ \__\____\_\  \ \__\ \__\\ \__\ \_______\
+   |\_________\|__| \|__|\|__|\|__|\|_______|\|__| \|__|\|__|\|__|\|_______|\|__|\|__|    \|__|  \|_______|        \|__|\|__|\_________\\_________\|__|\|__|\_________\|__|\|__| \|__|\|_______|
+   \|_________|                                                                                                             \|_________\|_________|        \|_________|                         
+                </pre>
+            </div>
+        </div>
+
+
+        <!-- Areas of Interest Section -->
+        <section class="interests-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Areas of Interest</h2>
+                </div>
+
+                <div class="interest-cards">
+                    <!-- Interest 1 -->
+                    <div class="interest-card">
+                        <div class="interest-header">
+                            <h3 class="interest-title">
+                                <span class="interest-icon">🔒</span>
+                                Security
+                            </h3>
+                        </div>
+                        <div class="interest-content">
+                            <p class="interest-description">
+                                New to the field of cybersecurity but have 
+                                always found it intriguing. Have informal 
+                                knowledge of the topic but write in C/C++ 
+                                primarily. This experience has taught me how to 
+                                write memory-safe, maintainable, and scaleable 
+                                code for use in large systems.
+                            </p>
+                            <div class="interest-tools">
+                                <h4 class="interest-tool-title">Skills</h4>
+                                <ul class="interest-tool-list">
+                                    <li class="interest-tool-item">Memory-safe programming</li>
+                                    <li class="interest-tool-item">C/C++ development</li>
+                                    <li class="interest-tool-item">Scalable system design</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interest 2 -->
+                    <div class="interest-card">
+                        <div class="interest-header">
+                            <h3 class="interest-title">
+                                <span class="interest-icon">🌐</span>
+                                Computer Networks
+                            </h3>
+                        </div>
+                        <div class="interest-content">
+                            <p class="interest-description">
+                                I have fallen in love with computer networks. 
+                                Currently concentrated in this area, developing 
+                                expertise in network architecture, protocols, 
+                                and systems. Passionate about building efficient 
+                                and secure networking solutions.
+                            </p>
+                            <div class="interest-tools">
+                                <h4 class="interest-tool-title">Focus Areas</h4>
+                                <ul class="interest-tool-list">
+                                    <li class="interest-tool-item">Network protocols</li>
+                                    <li class="interest-tool-item">System architecture</li>
+                                    <li class="interest-tool-item">Network security</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interest 3 -->
+                    <div class="interest-card">
+                        <div class="interest-header">
+                            <h3 class="interest-title">
+                                <span class="interest-icon">⌨️</span>
+                                NeoVim
+                            </h3>
+                        </div>
+                        <div class="interest-content">
+                            <p class="interest-description">
+                                Introduced to vim in my first year 
+                                of education. Initially dreaded it,
+                                seeing vim as a limited way of editing. 
+                                Now a religious advocate of vim. Use it 
+                                for anything and everything including: 
+                                creating PDF assignments in markdown, 
+                                coding in C/C++, and even for math work.
+                            </p>
+                            <p class="interest-description">
+                                Love learning more about vim as it truly makes 
+                                me a more efficient programmer, able to work
+                                effectively and quickly on any system regardless 
+                                of OS or hardware. It also enables me to say: "I 
+                                use Neovim btw."
+                            </p>
+                            <div class="interest-tools">
+                                <h4 class="interest-tool-title">NeoVim Stack</h4>
+                                <ul class="interest-tool-list">
+                                    <li class="interest-tool-item">Yazi</li>
+                                    <li class="interest-tool-item">Catpuccin theme</li>
+                                    <li class="interest-tool-item">Fuzzy Finder</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interest 4 -->
+                    <div class="interest-card">
+                        <div class="interest-header">
+                            <h3 class="interest-title">
+                                <span class="interest-icon">🖥️</span>
+                                Ricing
+                            </h3>
+                        </div>
+                        <div class="interest-content">
+                            <p class="interest-description">
+                                Enjoy spending break time from studies to 
+                                improve my setup to be more effective. 
+                                Maintain a config repo with documentation 
+                                and portable ways to import system 
+                                requirements to any new system. Currently 
+                                work primarily in Windows but am developing 
+                                a portable way to determine OS and install 
+                                configurations based on the system.
+                            </p>
+                            <div class="interest-tools">
+                                <h4 class="interest-tool-title">Tools</h4>
+                                <ul class="interest-tool-list">
+                                    <li class="interest-tool-item">NVim with customizations</li>
+                                    <li class="interest-tool-item">Glaze and Zebar (Windows)</li>
+                                    <li class="interest-tool-item">Custom configurations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>© 2025 Victor Perez Contreras Portfolio. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
