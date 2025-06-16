@@ -145,4 +145,38 @@
     .project-image {
         width: 100%;
     }
+
+    .project-video {
+        min-height: 250px;
+    }
 }
+
+.project-video {
+    flex: 1;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1f2937, #2d3748);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-video::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 102, 0.1), rgba(153, 51, 255, 0.1));
+    z-index: 1;
+    pointer-events: none;
+}
+
