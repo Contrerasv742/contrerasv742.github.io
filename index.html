@@ -9,22 +9,18 @@
         <link rel="stylesheet" href="styles/project.css">
         <link rel="stylesheet" href="styles/header.css">
         <script src="scripts/sliding_cards.js"></script>
+        <script src="scripts/main.js"></script>
     </head>
     <body>
-        <header class="header">
-            <div class="container">
-                <div class="header-content">
-                    <div class="nav-buttons">
-                        <a href="index.html" class="nav-button active">Home</a>
-                        <a href="projects.html" class="nav-button">Projects</a>
-                        <a href="education.html" class="nav-button">Education</a>
-                        <a href="interests.html" class="nav-button">Interests</a>
-                        <a href="mech.html" class="nav-button">Mech</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <!--- Header --->
+        <div id="header-container"></div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('header-container').innerHTML = createHeader();
+        });
+        </script>
 
+        <!-- ASCII ---->
         <div class="container">
             <div class="ascii-container">
                 <pre class="ascii-art">
@@ -53,24 +49,26 @@
                         <p class="profile-title">Software Developer</p>
                         <div class="profile-description">
                             <p>
-                                I am a passionate computer engineering major at UC Santa Cruz. I am 
-                                concetrating in Computer Network with a deep interst in creating 
-                                memory-safe C and C++ code. I intend on graduating in December 2025. 
+                                I am a passionate Computer Engineering major at UC Santa
+                                Cruz. I am concetrating in Computer Network with a deep
+                                interst in creating memory-safe C and C++ code. I intend
+                                on graduating in December 2025. 
                             </p>
                             <br>
                             <p>
-                                I have lots of experience in creating rigorous networking protocols, 
-                                such as HTTP, TCP, and echo servers. Many of these protocols I have 
-                                implemented with threads, teaching me about thread safety, memory 
-                                management, large code bases, and program efficiency. Additionally, 
-                                I have relevant experience in emebedded systems, mechanical design, 
-                                and hardware design. I learned these topics in CSE 100 (Logic Design) 
-                                and ECE 118 (Mechatronics). 
+                                I have lots of experience in creating rigorous networking
+                                programs implementing protocols for HTTP, logging, and
+                                Proxy servers. Many of these protocols I have implemented
+                                with threads, teaching me about thread safety, memory
+                                management, large code bases, and program efficiency.
+                                Additionally, I have relevant experience in emebedded
+                                systems, mechanical design, and hardware design. I learned
+                                these topics in CSE 100 (Logic Design) and ECE 118
+                                (Mechatronics).
                             </p>
                             <br>
                             <p>
-                                In my free time I enjoy learning about cybersecurity and linux ricing. 
-                                I use arch btw ;)
+                                In my free time I enjoy learning about cybersecurity and linux ricing. I use arch btw ;)
                             </p>
                         </div>
                         <div class="profile-details">
@@ -103,157 +101,8 @@
             </div>
         </section>
 
-        <section class="projects container">
-            <!-- Project 1 -->
-            <div class="project-card from-left">
-                <div class="project-image"><img src="imgs/login_page.png" alt="Vault..."></div>
-                <div class="project-content">
-                    <h2 class="project-title">Vault</h2>
-                    <p class="project-desc">
-                        • Developed a deep understanding of industry-standard encryption methods: 2048-bit RSA for key exchange and
-                        AES-256 for data encryption
-                    </p>
-                    <p class="project-desc">
-                        • Implemented a hybrid cryptosystem, combining asymmetric and symmetric encryption for optimal security and
-                        performance
-                    </p>
-                    <p class="project-desc">
-                        • Designed an intuitive user interface with features like password strength assessment, auto-fill functionality, and
-                        secure password generation
-                    </p>
-                    <p class="project-desc">
-                        • Utilized JSON for efficient data serialization, enabling easy local storage and future cloud integration
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech">C++</span>
-                        <span class="tech">Git</span>
-                        <span class="tech">JSON</span>
-                        <span class="tech">Cybersecurity</span>
-                        <span class="tech">Cryptography</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Contrerasv742/vault" class="project-link">
-                            View Demo
-                        </a>
-                        <a href="https://github.com/Contrerasv742/vault" class="project-link secondary">
-                            GitHub Repo
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h2 class="project-title">Emulator</h2>
-                    <p class="project-desc">
-                        • Applied extensive knowledge of computer architecture to develop a highly efficient virtual CPU and GPU
-                    </p>
-                    <p class="project-desc">
-                        • Learned the intricacies of continuous integration and crafted robust .yml files to streamline development
-                    </p>
-                    <p class="project-desc">
-                        • Strengthened team leadership and collaboration skills through extensive work on git and continuous integration
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech">C++</span>
-                        <span class="tech">Git</span>
-                        <span class="tech">Team Management</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link secondary">GitHub Repo</a>
-                    </div>
-                </div>
-                <div class="project-image"><span>Project 2</span></div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card from-left">
-                <div class="project-image"><span>Mult-threaded HTTP Server</span></div>
-                <div class="project-content">
-                    <h2 class="project-title">Multi-threaded HTTP Server</h2>
-                    <p class="project-desc">
-                        • Gained a deep understanding of common HTTP request formatting and best practices
-                    </p>
-                    <p class="project-desc">
-                        • Implemented a sophisticated reader-writer lock system to optimize performance and ensure data integrity
-                    </p>
-                    <p class="project-desc">
-                        • Developed a robust server capable of handling 100+ concurrent HTTP requests efficiently
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech">C</span>
-                        <span class="tech">Git</span>
-                        <span class="tech">Regex</span>
-                        <span class="tech">HTTP</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link secondary">GitHub Repo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h2 class="project-title">Webscraper</h2>
-                    <p class="project-desc">
-                        Engineered a powerful bot that seamlessly interacts with Twitter, opening up new data collection opportunities
-                    </p>
-                    <p class="project-desc">
-                        Mastered advanced web scraping techniques using C, enabling the extraction of valuable insights
-                    </p>
-                    <p class="project-desc">
-                        Developed strong SQL skills to effectively store, manage, and analyze the scraped data
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech">C</span>
-                        <span class="tech">HTML/CSS</span>
-                        <span class="tech">JavaScript</span>
-                        <span class="tech">SQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link secondary">GitHub Repo</a>
-                    </div>
-                </div>
-                <div class="project-image"><span>Project 4</span></div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-card from-left">
-                <div class="project-image"><span>Lunar Rover</span></div>
-                <div class="project-content">
-                    <h2 class="project-title">Lunar Rover</h2>
-                    <p class="project-desc">
-                        Selected to participate in the prestigious 12-week, NASA-funded engineering workforce development
-                    </p>
-                    <p class="project-desc">
-                        Designed and optimized a lunar rover filtration system using CAD software, implementing Flow Charts and
-                        Verification Matrices to validate system requirements
-                    </p>
-                    <p class="project-desc">
-                        Led technical documentation efforts for subsystem integration, developing comprehensive verification procedures
-                        and test protocols
-                    </p>
-                    <p class="project-desc">
-                        Developed redundant data verification systems that stabilized transmission risk at Level 3 (moderate) through
-                        implementation of checksums and error correction protocols
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech">Verification Matrix</span>
-                        <span class="tech">Budgeting</span>
-                        <span class="tech">Team Work</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link secondary">GitHub Repo</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!--- Projects Section --->
+        <portfolio-projects></portfolio-projects>
 
         <footer>
             <div class="container">

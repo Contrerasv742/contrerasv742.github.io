@@ -6,22 +6,17 @@
         <title>My Interests</title>
         <link rel="stylesheet" href="styles/header.css">
         <link rel="stylesheet" href="styles/other.css">
+        <script src="scripts/main.js"></script>
         <script src="scripts/cards.js"></script>
     </head>
     <body>
-        <header class="header">
-            <div class="container">
-                <div class="header-content">
-                    <div class="nav-buttons">
-                        <a href="index.html" class="nav-button">Home</a>
-                        <a href="projects.html" class="nav-button">Projects</a>
-                        <a href="education.html" class="nav-button">Education</a>
-                        <a href="interests.html" class="nav-button active">Interests</a>
-                        <a href="mech.html" class="nav-button">Mech</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <!--- Header --->
+        <div id="header-container"></div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('header-container').innerHTML = createHeader();
+        });
+        </script>
 
         <div class="container">
             <div class="ascii-container">

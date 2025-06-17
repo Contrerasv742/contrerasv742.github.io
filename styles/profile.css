@@ -50,6 +50,18 @@
     background-clip: text;
 }
 
+.contributor-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+        linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) border-box;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
 .profile-info {
     flex: 1;
 }
@@ -175,3 +187,4 @@
         justify-content: center;
     }
 }
+
