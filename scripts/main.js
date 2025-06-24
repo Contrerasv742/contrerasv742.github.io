@@ -200,6 +200,44 @@ class Projects extends HTMLElement {
                         <a href="#" class="project-link secondary">GitHub Repo</a>
                     </div>
                 </div>
+
+            <!-- Project 6 -->
+            <div class="project-card from-left">
+                <div class="project-image"><span>Lunar Rover</span></div>
+                <div class="project-content">
+                    <h2 class="project-title">Lunar Rover</h2>
+                    <p class="project-desc">
+                        • Designed and fabricated a fully 3D-printed 
+                          autonomous robot capable of firing M&M's 
+                          at IR beacons and obstacles
+                    </p>
+                    <p class="project-desc">
+                        • Engineered modular stacking design with yaw 
+                          and pitch tilt system using stepper motors
+                    </p>
+                    <p class="project-desc">
+                        • Mitigated stepper motor limitations through
+                          mechanical optimization and friction (via 
+                          rubber band) enhancement
+                    </p>
+                    <p class="project-desc">
+                        • Resolved critical center-of-mass displacement
+                          issues through iterative counterweight 
+                          optimization and strategic plastic volume 
+                          redistribution, maintaining structural integrity 
+                          while rebalancing 386mm³ design within volume 
+                          constraints
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech">Verification Matrix</span>
+                        <span class="tech">Budgeting</span>
+                        <span class="tech">Team Work</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Demo</a>
+                        <a href="#" class="project-link secondary">GitHub Repo</a>
+                    </div>
+                </div>
             </div>
         </section>
         `;
