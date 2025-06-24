@@ -98,7 +98,7 @@ class Projects extends HTMLElement {
                     </div>
                     <div class="project-links">
                         <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link secondary">GitHub Repo</a>
+                        <a href="https://github.com/CSE111-Group-6/final.git" class="project-link secondary">GitHub Repo</a>
                     </div>
                 </div>
                 <div class="project-image"><span>Project 2</span></div>
@@ -137,19 +137,28 @@ class Projects extends HTMLElement {
             <!-- Project 4 -->
             <div class="project-card">
                 <div class="project-content">
-                    <h2 class="project-title">Webscraper</h2>
+                    <h2 class="project-title">Snackoboto Assassino</h2>
                     <p class="project-desc">
-                        • Engineered a powerful bot that seamlessly interacts
-                        with Twitter, opening up new data collection
-                        opportunities
+                        • Designed and fabricated a fully 3D-printed 
+                          autonomous robot capable of firing M&M's 
+                          at IR beacons and obstacles
                     </p>
                     <p class="project-desc">
-                        • Mastered advanced web scraping techniques using C,
-                        enabling the extraction of valuable insights
+                        • Engineered modular stacking design with yaw 
+                          and pitch tilt system using stepper motors
                     </p>
                     <p class="project-desc">
-                        • Developed strong SQL skills to effectively store,
-                        manage, and analyze the scraped data
+                        • Mitigated stepper motor limitations through
+                          mechanical optimization and friction (via 
+                          rubber band) enhancement
+                    </p>
+                    <p class="project-desc">
+                        • Resolved critical center-of-mass displacement
+                          issues through iterative counterweight 
+                          optimization and strategic plastic volume 
+                          redistribution, maintaining structural integrity 
+                          while rebalancing 386mm³ design within volume 
+                          constraints
                     </p>
                     <div class="tech-stack">
                         <span class="tech">C</span>
@@ -162,7 +171,7 @@ class Projects extends HTMLElement {
                         <a href="#" class="project-link secondary">GitHub Repo</a>
                     </div>
                 </div>
-                <div class="project-image"><span>Project 4</span></div>
+                <div class="project-image"><span>Snackoboto Assassino</span></div>
             </div>
 
             <!-- Project 5 -->
@@ -200,44 +209,37 @@ class Projects extends HTMLElement {
                         <a href="#" class="project-link secondary">GitHub Repo</a>
                     </div>
                 </div>
+            </div>
 
             <!-- Project 6 -->
-            <div class="project-card from-left">
-                <div class="project-image"><span>Lunar Rover</span></div>
+            <div class="project-card">
                 <div class="project-content">
-                    <h2 class="project-title">Lunar Rover</h2>
+                    <h2 class="project-title">Webscraper</h2>
                     <p class="project-desc">
-                        • Designed and fabricated a fully 3D-printed 
-                          autonomous robot capable of firing M&M's 
-                          at IR beacons and obstacles
+                        • Engineered a powerful bot that seamlessly interacts
+                        with Twitter, opening up new data collection
+                        opportunities
                     </p>
                     <p class="project-desc">
-                        • Engineered modular stacking design with yaw 
-                          and pitch tilt system using stepper motors
+                        • Mastered advanced web scraping techniques using C,
+                        enabling the extraction of valuable insights
                     </p>
                     <p class="project-desc">
-                        • Mitigated stepper motor limitations through
-                          mechanical optimization and friction (via 
-                          rubber band) enhancement
-                    </p>
-                    <p class="project-desc">
-                        • Resolved critical center-of-mass displacement
-                          issues through iterative counterweight 
-                          optimization and strategic plastic volume 
-                          redistribution, maintaining structural integrity 
-                          while rebalancing 386mm³ design within volume 
-                          constraints
+                        • Developed strong SQL skills to effectively store,
+                        manage, and analyze the scraped data
                     </p>
                     <div class="tech-stack">
-                        <span class="tech">Verification Matrix</span>
-                        <span class="tech">Budgeting</span>
-                        <span class="tech">Team Work</span>
+                        <span class="tech">C</span>
+                        <span class="tech">HTML/CSS</span>
+                        <span class="tech">JavaScript</span>
+                        <span class="tech">SQL</span>
                     </div>
                     <div class="project-links">
                         <a href="#" class="project-link">View Demo</a>
                         <a href="#" class="project-link secondary">GitHub Repo</a>
                     </div>
                 </div>
+                <div class="project-image"><span>Project 4</span></div>
             </div>
         </section>
         `;
