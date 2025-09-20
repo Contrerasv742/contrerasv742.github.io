@@ -12,10 +12,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --surface: #211A1D;
+  --primary: #6969B3;
+  --secondary: #C4D7F2;
   --accent: #8075FF;
-  --text: #F8F0FB;
-  --secondary: #CAD5CA;
+  --background: #30332E;
+  --surface: #30332E;
+  --text: #F0F7EE;
+  --text-muted: none;
+
+  --blue: #6969B3;
 }
 
 a {

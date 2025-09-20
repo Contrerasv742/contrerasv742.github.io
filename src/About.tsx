@@ -1,4 +1,5 @@
 import './About.css'
+import portrait from './assets/about/portrait.jpg'
 import cppIcon from './assets/about/cpp.png';
 import cIcon from './assets/about/c.png';
 import gitIcon from './assets/about/git.png';
@@ -13,13 +14,15 @@ function About() {
       <h1>About</h1>
       <div className="about-container">
         <div className="about-left-container">
-          <div className="portrait-container"></div>
+          <div className="portrait-container">
+            <img src={portrait}/>
+          </div>
           <div className="about-text">
             <p>
               I am a passionate Computer Engineering major at UC Santa
               Cruz. I am concentrating in Computer Network with a deep
-              interest in creating memory-safe C and C++ code. I intend
-              on graduating in December 2025. 
+              interest in creating memory-safe C and C++ code. I will be
+              graduating in December 2025. 
             </p>
             <br/>
             <p>
@@ -35,7 +38,9 @@ function About() {
             </p>
             <br/>
             <p>
-              In my free time I enjoy learning about cybersecurity and Linux ricing. I use arch btw ;)
+              In my free time I enjoy learning about cybersecurity and Linux
+              ricing. I use arch btw ;) I also dabble with baking and playing
+              the guitar.
             </p>
             <br/>
           </div>
