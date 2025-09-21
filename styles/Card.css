@@ -1,0 +1,31 @@
+.card-container {
+  border: solid 4px var(--accent);
+  border-radius: 5px;
+  display: grid;
+  width: 320px;
+  height: 225px;
+  position: relative;
+}
+
+.card-container > * {
+  grid-area: 1 / 1;
+}
+
+.card-info {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-container:hover { 
+  .card-info {
+    opacity: 1;
+  }
+
+  .card-img {
+    opacity: 0;
+  }
+}
+
+// TODO: how to relate to percentages for active sliding
+// small: 320 x 225
+// large: 456 x 312

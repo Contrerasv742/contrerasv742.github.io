@@ -1,12 +1,12 @@
-import './About.css'
-import portrait from './assets/about/portrait.jpg'
-import cppIcon from './assets/about/cpp.png';
-import cIcon from './assets/about/c.png';
-import gitIcon from './assets/about/git.png';
-import pythonIcon from './assets/about/python.png';
-import reactIcon from './assets/about/react.svg';
-import tsIcon from './assets/about/TypeScript.avif';
-import rustIcon from './assets/about/rust.png';
+import '../styles/About.css'
+import portrait from '../assets/about/portrait.jpg'
+import cppIcon from '../assets/about/cpp.png';
+import cIcon from '../assets/about/c.png';
+import gitIcon from '../assets/about/git.png';
+import pythonIcon from '../assets/about/python.png';
+import reactIcon from '../assets/about/react.svg';
+import tsIcon from '../assets/about/TypeScript.avif';
+import rustIcon from '../assets/about/rust.png';
 
 function About() {
   return (

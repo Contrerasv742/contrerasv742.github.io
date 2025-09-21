@@ -1,0 +1,12 @@
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-row {
+  display: flex;
+  gap: 2rem;
+}
