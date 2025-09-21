@@ -1,4 +1,5 @@
 import '../styles/Card.css'
+import rustProp from '../assets/about/rust.png'
 
 interface CardProps {
   title: string;
@@ -16,7 +17,7 @@ function Card({ title, description }: CardProps) {
             <p>{description}</p>
           </div>
         </div>
-        <img src='../assets/about/cpp.png' className='card-img' />
+        <img src={rustProp} className='card-img' />
       </div>
     </>
   )

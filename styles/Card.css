@@ -1,10 +1,11 @@
 .card-container {
   border: solid 4px var(--accent);
-  border-radius: 5px;
+  border-radius: 15px;
   display: grid;
   width: 320px;
   height: 225px;
   position: relative;
+  overflow: hidden;
 }
 
 .card-container > * {
@@ -12,8 +13,13 @@
 }
 
 .card-info {
-  opacity: 0;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  position: relative;
   transition: opacity 0.3s ease;
+  background-color: var(--accent);
+  opacity: 0;
 }
 
 .card-container:hover { 
@@ -24,6 +30,18 @@
   .card-img {
     opacity: 0;
   }
+}
+
+.card-info > * {
+  grid-area: 1 / 1;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
 }
 
 // TODO: how to relate to percentages for active sliding
