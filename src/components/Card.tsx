@@ -1,25 +1,22 @@
 import '../styles/Card.css'
-import rustProp from '../assets/about/rust.png'
-
 interface CardProps {
   title: string;
   img: string;
   description: string;
+  url: string;
 }
 
-function Card({ title, description }: CardProps) {
+function Card({ title, img, description, url }: CardProps) {
   return (
-    <>
-      <div className="card-container">
-        <div className='card-info'>
-          <h1>{title}</h1>
-          <div>
-            <p>{description}</p>
-          </div>
+    <a href={url} className="card-container" target="_blank" rel="noopener noreferrer">
+      <div className='card-info'>
+        <h2 className='card-title' >{title}</h2>
+        <div>
+          <p className='card-description'>{description}</p>
         </div>
-        <img src={rustProp} className='card-img' />
       </div>
-    </>
+      <img className='card-img' src={img} />
+    </a>
   )
 }
 

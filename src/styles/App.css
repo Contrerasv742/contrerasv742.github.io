@@ -1,0 +1,102 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  height: 100vh;
+  padding: 2em;
+}
+.intro h1 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.name {
+    color: var(--accent);
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.projects-btn {
+  font-size: 1.25rem;
+  color: var(--accent);
+  text-align: center;
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 1rem;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Static dim border */
+.projects-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  padding: 2px;
+  background: var(--accent);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.3;
+}
+
+/* Animated border */
+.projects-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  padding: 2px;
+  --border-angle: 0deg;
+  background: conic-gradient(
+    var(--accent) var(--border-angle),
+    transparent var(--border-angle)
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.projects-btn:hover::after {
+  animation: fill-border 0.6s linear forwards;
+}
+
+.projects-btn:hover {
+  color: #fff;
+}
+
+@keyframes fill-border {
+  from {
+    --border-angle: 0deg;
+  }
+  to {
+    --border-angle: 360deg;
+  }
+}
