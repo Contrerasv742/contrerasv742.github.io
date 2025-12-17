@@ -144,7 +144,7 @@ const StarField: React.FC<StarFieldProps> = ({ className = "" }) => {
   const starsRef = useRef<Star[]>([]);
   const dotsRef = useRef<(Dot | null)[]>([]);
   const mouseRef = useRef({ x: 0, y: 0, moving: false });
-  const mouseMoveCheckerRef = useRef<NodeJS.Timeout | null>(null);
+  const mouseMoveCheckerRef = useRef<number | null>(null);
 
   // Parameters
   const params = useRef({
