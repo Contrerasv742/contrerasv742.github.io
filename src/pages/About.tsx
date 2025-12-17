@@ -69,24 +69,28 @@ function About() {
           </div>
           <div className="about-text">
             <p>
-              I am a passionate Computer Engineering major at UC Santa
-              Cruz. I am concentrating in Computer Network with a deep
-              interest in creating memory-safe C and C++ code. I will be
-              graduating in December 2025.
+              I am a Computer Engineering graduate from UC Santa Cruz. I have a
+              concetration in Computer Network with a deep interest in creating
+              memory-safe C and C++ code. 
             </p>
             <br />
+
             <p>
               I have lots of experience in creating rigorous networking
-              programs implementing protocols for HTTP, logging, and
-              Proxy servers. Many of these protocols I have implemented
-              with threads, teaching me about thread safety, memory
-              management, large codebases, and program efficiency.
-              Additionally, I have relevant experience in embedded
-              systems, mechanical design, and hardware design. I learned
-              these topics in CSE 100 (Logic Design) and ECE 118
-              (Mechatronics).
+              programs implementing protocols for HTTP, logging, and Proxy
+              servers. Many of these protocols I have implemented with threads,
+              making me profecient in thread safety, memory management, large
+              codebases, and program efficiency. 
+            </p>
+            <br/>
+
+            <p>
+              Additionally, I have relevant experience in embedded systems,
+              mechanical design, and hardware design. I learned these topics in
+              CSE 100 (Logic Design) and ECE 118 (Mechatronics).
             </p>
             <br />
+
             <p>
               In my free time I enjoy learning about cybersecurity and Linux
               ricing. I use arch btw ;) I also dabble with baking and playing

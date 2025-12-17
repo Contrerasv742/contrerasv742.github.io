@@ -12,9 +12,9 @@ function App() {
           Hello, I am <span className="name"> Victor</span>
         </h1>
         <h1>I am a Computer Engineer</h1>
-        <div className="work-btn">
+        <a href="#projects"className="projects-btn">
           View my projects <span>-{'>'}</span>
-        </div>
+        </a>
       </div>
     </>
   )
