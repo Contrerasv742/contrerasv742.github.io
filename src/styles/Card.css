@@ -44,7 +44,6 @@
   }
 }
 
-
 .card-title {
   grid-area: grid-row-start;
   color: var(--text);
@@ -53,7 +52,3 @@
 .card-description {
   color: var(--text);
 }
-
-/* TODO: how to relate to percentages for active sliding */
-/* small: 320 x 225 */
-/* large: 456 x 312 */
