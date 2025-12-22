@@ -55,13 +55,7 @@
 /* ==================== */
 
 .honeycomb-container {
-  --hex-size: 110px;
-  --glass-bg: rgba(255, 255, 255, 0.074);
-  --glass-bg-light: rgba(255, 255, 255, 0.12);
-  --glass-border: rgba(255, 255, 255, 0.222);
-  --glass-border-hover: rgba(255, 255, 255, 0.454);
-  --accent-glow: rgba(128, 117, 255, 0.25);
-  
+  --hex-size: 125px;
   position: relative;
 }
 
@@ -74,7 +68,7 @@
 
 .hex-row {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   justify-content: center;
   padding: 0px;
   margin: -0.5rem;
@@ -122,18 +116,13 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* Hexagon border layer */
+/* Static border - visible by default */
 .hex-border {
   position: absolute;
-  inset: 0;
+  inset: -2px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background: transparent;
-  border: 1px solid var(--glass-border);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hex-wrapper:hover .hex-border {
-  border-color: var(--glass-border-hover);
+  background: var(--primary);
+  transition: opacity 0.3s ease;
 }
 
 /* Glass effect layer */
@@ -141,62 +130,15 @@
   position: absolute;
   inset: 0;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-color: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--surface);
   transition: box-shadow 0.3s ease;
-  overflow: hidden;
 }
 
 .hex-glass-back {
-  background-color: var(--glass-bg-light);
+  background: color-mix(in srgb, var(--surface) 90%, var(--accent) 10%);
 }
 
-/* Background icon styling */
-.hex-bg-icon {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  opacity: 0.08;
-  transform: scale(1.8);
-  filter: blur(2px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.hex-bg-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.hex-bg-icon-back {
-  opacity: 0.12;
-  transform: scale(1.5);
-}
-
-.hex-wrapper:hover .hex-bg-icon {
-  opacity: 0.12;
-  transform: scale(2);
-}
-
-/* Hover glow effect - using accent color from index.css */
-.hex-wrapper:hover .hex-glass {
-  box-shadow: 0px 0px 20px 1px var(--accent-glow);
-}
-
-/* Front face */
-.hex-front {
-  z-index: 2;
-}
-
-/* Back face */
-.hex-back {
-  transform: rotateY(180deg);
-}
-
+/* Content */
 .hex-content {
   position: relative;
   display: flex;
@@ -209,17 +151,23 @@
   z-index: 1;
 }
 
+/* Front content - fades out on hover */
+.hex-icon-wrapper,
+.hex-name {
+  transition: opacity 0.25s ease;
+}
+
+.hex-wrapper:hover .hex-icon-wrapper,
+.hex-wrapper:hover .hex-name {
+  opacity: 0;
+}
+
 .hex-icon-wrapper {
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.hex-wrapper:hover .hex-icon-wrapper {
-  transform: scale(1.1);
 }
 
 .hex-icon {
@@ -237,6 +185,7 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Back content */
 .hex-name-back {
   font-size: 0.75rem;
   color: var(--accent);
@@ -253,6 +202,16 @@
   line-height: 1.3;
   margin: 0;
   padding: 0 0.2rem;
+}
+
+/* Front face */
+.hex-front {
+  z-index: 2;
+}
+
+/* Back face */
+.hex-back {
+  transform: rotateY(180deg);
 }
 
 /* ==================== */
@@ -326,3 +285,4 @@
   .about-container {
     padding: 1rem;
   }
+}

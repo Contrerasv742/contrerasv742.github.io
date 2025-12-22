@@ -30,10 +30,6 @@ function HexagonSkill({ icon, name, description, index }: HexagonSkillProps) {
           <div className="hexagon hex-front">
             <div className="hex-border"></div>
             <div className="hex-glass">
-              {/* Background icon */}
-              <div className="hex-bg-icon">
-                <img src={icon} alt="" />
-              </div>
               <div className="hex-content">
                 <div className="hex-icon-wrapper">
                   <img src={icon} alt={name} className="hex-icon" />
@@ -47,10 +43,6 @@ function HexagonSkill({ icon, name, description, index }: HexagonSkillProps) {
           <div className="hexagon hex-back">
             <div className="hex-border"></div>
             <div className="hex-glass hex-glass-back">
-              {/* Background icon */}
-              <div className="hex-bg-icon hex-bg-icon-back">
-                <img src={icon} alt="" />
-              </div>
               <div className="hex-content">
                 <span className="hex-name-back">{name}</span>
                 <p className="hex-description">{description}</p>
