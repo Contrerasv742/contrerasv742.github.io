@@ -1,7 +1,7 @@
 .card-container {
   display: block;
   border: solid 3px var(--accent);
-  border-radius: 15px;
+  border-radius: 5px;
   display: grid;
   width: 320px;
   height: 225px;

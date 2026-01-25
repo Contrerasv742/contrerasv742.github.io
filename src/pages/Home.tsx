@@ -12,9 +12,9 @@ function Home() {
           Hello, I am <span className="name"> Victor</span>
         </h1>
         <h1>I am a Computer Engineer</h1>
-        <button className="btn">
+        <a href="#projects" className="btn">
           View my projects <span>-{'>'}</span>
-        </button>
+        </a>
       </div>
     </>
   )
