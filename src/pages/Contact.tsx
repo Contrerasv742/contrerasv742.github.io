@@ -32,8 +32,8 @@ function Contact() {
             </a>
           </li>
           <li>
-            <a href="#">
-              <i className="fab fa-mailchimp icon"></i>
+            <a href="https://www.strava.com/athletes/56603646">
+              <i className="fab fa-strava icon"></i>
             </a>
           </li>
         </ul>
