@@ -21,7 +21,7 @@ function Projects() {
           />
           <Card
             title="Snackobato Assassino"
-            img="src/assets/projects/snacko.png"
+            img="src/assets/projects/snacko.JPG"
             description={"M&M Turret with target detection"}
             url="https://github.com/Contrerasv742/snackabato"
           />
