@@ -15,13 +15,13 @@ function Projects() {
           />
           <Card
             title="Slug Board"
-            img="src/assets/projects/vault.png"
+            img="src/assets/projects/slug_board.png"
             description="UC Santa Cruz Social Media Application"
             url="https://github.com/Contrerasv742/slug_board"
           />
           <Card
             title="Snackobato Assassino"
-            img="src/assets/projects/vault.png"
+            img="src/assets/projects/snacko.png"
             description={"M&M Turret with target detection"}
             url="https://github.com/Contrerasv742/snackabato"
           />
