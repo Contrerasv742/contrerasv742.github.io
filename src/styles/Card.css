@@ -1,6 +1,6 @@
 .card-container {
   display: block;
-  border: solid 4px var(--accent);
+  border: solid 3px var(--accent);
   border-radius: 15px;
   display: grid;
   width: 320px;

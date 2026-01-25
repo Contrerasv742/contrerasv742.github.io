@@ -6,7 +6,7 @@ import gitIcon from '../assets/about/git.png';
 import pythonIcon from '../assets/about/python.png';
 import reactIcon from '../assets/about/react.svg';
 import tsIcon from '../assets/about/TypeScript.avif';
-import rustIcon from '../assets/about/rust.png';
+import rustIcon from '../assets/about/rust-crab.webp';
 
 interface SkillData {
   icon: string;
@@ -97,7 +97,7 @@ function HoneycombSkills() {
 function About() {
   return (
     <>
-      <h1>About</h1>
+      <div className="heading">About</div>
       <div className="about-container">
         <div className="about-left-container">
           <div className="portrait-container">

@@ -121,7 +121,7 @@
   position: absolute;
   inset: -2px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background: var(--primary);
+  background: var(--trim);
   transition: opacity 0.3s ease;
 }
 
@@ -130,7 +130,7 @@
   position: absolute;
   inset: 0;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background: var(--surface);
+  background: var(--shadow);
   transition: box-shadow 0.3s ease;
 }
 
@@ -174,11 +174,11 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 2px 7px rgba(0, 0, 0, 0.4));
 }
 
 .hex-name {
-  font-size: 0.65rem;
+  font-size: 0.70rem;
   color: var(--text);
   text-transform: uppercase;
   letter-spacing: 0.05em;

@@ -8,7 +8,7 @@ function Contact() {
         Link: https://prismic.io/blog/css-hover-effects
         Accessed: 13 September 2025
       */}
-      <h1>Contact</h1>
+      <div className="heading">Contact</div>
       <div className="contact-container">
         <link rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
