@@ -2,7 +2,7 @@ import '../styles/Projects.css'
 
 import vault from '../assets/projects/vault.png'
 import slug_board from '../assets/projects/slug_board.png'
-import snacko from '../assets/projects/snacko.JPG'
+import snacko from '../assets/projects/snacko.jpg'
 
 interface CardProps {
   title: string;
