@@ -1,5 +1,25 @@
 import '../styles/Projects.css'
-import Card from '../components/Card';
+
+interface CardProps {
+  title: string;
+  img: string;
+  description: string;
+  url: string;
+}
+
+function Card({ title, img, description, url }: CardProps) {
+  return (
+    <a href={url} className="card-container" target="_blank" rel="noopener noreferrer">
+      <div className='card-info'>
+        <h2 className='card-title' >{title}</h2>
+        <div>
+          <p className='card-description'>{description}</p>
+        </div>
+      </div>
+      <img className='card-img' src={img}/>
+    </a>
+  )
+}
 
 function Projects() {
   return (

@@ -10,3 +10,58 @@
   display: flex;
   gap: 2rem;
 }
+
+.card-container {
+  border: solid 3.5px var(--trim);
+  border-radius: 3px;
+  display: grid;
+  width: 320px;
+  height: 225px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 4px 6px 14px #00000036;
+}
+
+.card-container > * {
+  grid-area: 1 / 1;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  z-index: 1;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.card-container:hover { 
+  .card-info {
+    opacity: 1;
+  }
+
+  .card-img {
+    filter: blur(10px);
+  }
+}
+
+.card-title {
+  grid-area: grid-row-start;
+  color: var(--text);
+  padding-bottom: 0px;
+}
+.card-description {
+  color: var(--text);
+}

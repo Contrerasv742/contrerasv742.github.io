@@ -4,22 +4,25 @@ import './styles/index.css'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
-// import Courses from './pages/Courses'
+import Courses from './pages/Courses'
 import Contact from './pages/Contact'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <section id="Home" className="">
-      <Home />
+      <Home/>
     </section>
     <section id="About" className="">
-      <About />
+      <About/>
     </section>
     <section id="Projects" className="">
-      <Projects />
+      <Projects/>
+    </section>
+    <section id="Courses" className="">
+      <Courses/>
     </section>
     <section id="Contact" className="">
-      <Contact />
+      <Contact/>
     </section>
   </StrictMode>,
 )

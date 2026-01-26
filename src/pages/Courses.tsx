@@ -1,29 +1,90 @@
 import '../styles/Courses.css'
-import Card from '../components/Card'
+
+interface CardProps {
+  title: string;
+  description: string;
+  skill:  [string, string, string]
+}
+
+function Card({ title, description, skill }: CardProps) {
+  return (
+    <div className="course-card-container">
+      <div className='course-info'>
+        <h2 className='course-title' >{title}</h2>
+        <div>
+          <p className='course-description'>{description}</p>
+        </div>
+        <ul className='course-skills'>
+          <li>{ skill[0] }</li>
+          <li>{ skill[1] }</li>
+          <li>{ skill[2] }</li>
+        </ul>
+      </div>
+    </div>
+  )
+}
 
 function Courses() {
   return (
     <>
       <div className="heading">Courses</div>
-      <div className='project-container'>
-        <div className='project-row'>
+      <div className='course-container'>
+        <div className='course-row'>
           <Card
-            title="Vault"
-            img="src/assets/projects/vault.png"
-            description="Hardware Password Manager"
-            url="https://github.com/contrerasv742/vault"
+            title='CSE 130'
+            description='Computer Systems Design'
+            skill={[
+              'System Calls: read/write',
+              'Safe memory access: mutex lock',
+              'Multithreading + Synchronization',
+            ]}
           />
           <Card
-            title="Snackobato Assassino"
-            img="src/assets/projects/snacko.JPG"
-            description={"M&M Turret with target detection"}
-            url="https://github.com/Contrerasv742/snackabato"
+            title='CSE 121'
+            description='Embedded Systems'
+            skill={[
+              'IoT devices',
+              'ESP32 coding framework',
+              'I2C Device Communication',
+            ]}
           />
           <Card
-            title="Slug Board"
-            img="src/assets/projects/slug_board.png"
-            description="UC Santa Cruz Social Media Application"
-            url="https://github.com/Contrerasv742/slug_board"
+            title='CSE 150'
+            description='Introduction to Computer Networks'
+            skill={[
+              'Protocols: HTTP, TCP, & DNS',
+              'Firewalls, Servers, & Cookies',
+              'L2/L3: WiFi, Ethernet, and BGP',
+            ]}
+          />
+        </div>
+        <div className='course-row'>
+          <Card
+            title='CSE 156'
+            description='Advanced Computer Networks'
+            skill={[
+              'OSI model',
+              'TLS Encryption',
+              'Multithreaded proxy server',
+            ]}
+          />
+          <Card
+            title='CSE 115A'
+            description='Introduction to Software Engineering'
+            skill={[
+              'Working in a team SCRUM',
+              'Workflows, PRs, and Branches',
+              'Data base request',
+            ]}
+          />
+          <Card
+            title='ECE 118'
+            description='Mechatronics'
+            skill={[
+              'CAD Design',
+              'Signals and Filtering',
+              'Mechatronic Design'
+            ]}
           />
         </div>
       </div>
