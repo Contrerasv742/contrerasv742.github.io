@@ -1,5 +1,9 @@
 import '../styles/Projects.css'
 
+import vault from '../assets/projects/vault.png'
+import slug_board from '../assets/projects/slug_board.png'
+import snacko from '../assets/projects/snacko.JPG'
+
 interface CardProps {
   title: string;
   img: string;
@@ -29,19 +33,19 @@ function Projects() {
         <div className='project-row'>
           <Card
             title="Vault"
-            img="src/assets/projects/vault.png"
+            img={vault}
             description="Hardware Password Manager"
             url="https://github.com/contrerasv742/vault"
           />
           <Card
             title="Snackobato Assassino"
-            img="src/assets/projects/snacko.JPG"
+            img={snacko}
             description={"M&M Turret with target detection"}
             url="https://github.com/Contrerasv742/snackabato"
           />
           <Card
             title="Slug Board"
-            img="src/assets/projects/slug_board.png"
+            img={slug_board}
             description="UC Santa Cruz Social Media Application"
             url="https://github.com/Contrerasv742/slug_board"
           />
