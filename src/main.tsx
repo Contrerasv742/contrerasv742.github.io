@@ -18,9 +18,6 @@ createRoot(document.getElementById('root')!).render(
     <section id="Projects" className="">
       <Projects />
     </section>
-    <section id="Courses" className="">
-      <Courses />
-    </section>
     <section id="Contact" className="">
       <Contact />
     </section>
