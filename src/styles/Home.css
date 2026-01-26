@@ -1,0 +1,75 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  height: 100vh;
+  padding: 2em;
+}
+.intro h1 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.name {
+    color: var(--accent);
+}
+
+/* From Uiverse.io by SujitAdroja */ 
+.btn {
+  color: var(--accent);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--accent);
+  padding: 12px 28px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 0.4s;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn span {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  color: white;
+  border-color: var(--accent);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: var(--accent);
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+.btn:hover::before {
+  width: 160%;
+}
+
+.btn:hover span {
+  transform: translateX(4px);
+}

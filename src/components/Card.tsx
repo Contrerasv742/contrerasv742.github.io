@@ -16,7 +16,7 @@ function Card({ title, img, description, url }: CardProps) {
           <p className='card-description'>{description}</p>
         </div>
       </div>
-      <img className='card-img' src={img} />
+      <img className='card-img' src={img}/>
     </a>
   )
 }

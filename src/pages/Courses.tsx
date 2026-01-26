@@ -1,10 +1,10 @@
-import '../styles/Projects.css'
-import Card from '../components/Card';
+import '../styles/Courses.css'
+import Card from '../components/Card'
 
-function Projects() {
+function Courses() {
   return (
-    <section id="projects">
-      <div className="heading">Projects</div>
+    <>
+      <div className="heading">Courses</div>
       <div className='project-container'>
         <div className='project-row'>
           <Card
@@ -27,8 +27,8 @@ function Projects() {
           />
         </div>
       </div>
-    </section>
+    </>
   )
 }
 
-export default Projects;
+export default Courses;
