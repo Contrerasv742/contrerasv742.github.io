@@ -94,6 +94,7 @@
   width: var(--hex-size);
   height: calc(var(--hex-size) * 1.1547);
   position: relative;
+  transform-style: preserve-3d;
 }
 
 .hex-flip-inner {
@@ -211,7 +212,15 @@
 
 /* Back face */
 .hex-back {
+  z-index: 1;
   transform: rotateY(180deg);
+}
+
+.hex-years {
+  font-size: 0.6rem;
+  color: var(--text);
+  margin: 0.2rem 0;
+  opacity: 0.8;
 }
 
 /* ==================== */

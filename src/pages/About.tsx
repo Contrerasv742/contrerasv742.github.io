@@ -11,6 +11,7 @@ import rustIcon from '../assets/about/rust-crab.webp';
 interface SkillData {
   icon: string;
   name: string;
+  years: string;
   description: string;
 }
 
@@ -18,7 +19,7 @@ interface HexagonSkillProps extends SkillData {
   index: number;
 }
 
-function HexagonSkill({ icon, name, description, index }: HexagonSkillProps) {
+function HexagonSkill({ icon, name, description, years, index }: HexagonSkillProps) {
   return (
     <div 
       className="hex-wrapper"
@@ -45,6 +46,7 @@ function HexagonSkill({ icon, name, description, index }: HexagonSkillProps) {
             <div className="hex-glass hex-glass-back">
               <div className="hex-content">
                 <span className="hex-name-back">{name}</span>
+                <span className="hex-years">{years}</span>
                 <p className="hex-description">{description}</p>
               </div>
             </div>
@@ -56,13 +58,13 @@ function HexagonSkill({ icon, name, description, index }: HexagonSkillProps) {
 }
 
 const skills_data: SkillData[] = [
-  { icon: pythonIcon, name: 'Python', description: 'Data science, automation, scripting' },
-  { icon: cppIcon, name: 'C++', description: 'Systems programming, performance-critical code' },
-  { icon: cIcon, name: 'C', description: 'Embedded systems, low-level programming' },
-  { icon: rustIcon, name: 'Rust', description: 'Memory-safe systems programming' },
-  { icon: reactIcon, name: 'React', description: 'Frontend UI development' },
-  { icon: tsIcon, name: 'TypeScript', description: 'Type-safe JavaScript' },
-  { icon: gitIcon, name: 'Git', description: 'Version control & collaboration' },
+  { icon: pythonIcon, name: 'Python', description: 'Data science, automation, scripting', years: '1 year', },
+  { icon: cppIcon, name: 'C++', description: 'Systems programming, performance-critical code', years: '1 year', },
+  { icon: cIcon, name: 'C', description: 'Embedded systems, low-level programming', years: '1 year', },
+  { icon: rustIcon, name: 'Rust', description: 'Memory-safe systems programming', years: '1 year', },
+  { icon: reactIcon, name: 'React', description: 'Frontend UI development', years: '1 year', },
+  { icon: tsIcon, name: 'TypeScript', description: 'Type-safe JavaScript', years: '1 year', },
+  { icon: gitIcon, name: 'Git', description: 'Version control & collaboration', years: '1 year', },
 ];
 
 function HoneycombSkills() {
