@@ -32,11 +32,11 @@ ul li a {
   width: 80px;
   height: 80px;
   background-color: #fff;
-  text-align: center;
-  line-height: 80px;
   font-size: 35px;
   margin: 0 10px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
