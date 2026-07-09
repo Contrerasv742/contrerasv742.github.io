@@ -40,21 +40,21 @@ function Courses() {
             ]}
           />
           <Card
+            title='ECE 118'
+            description='Mechatronics'
+            skill={[
+              'CAD Design',
+              'Signals and Filtering',
+              'Mechatronic Design'
+            ]}
+          />
+          <Card
             title='CSE 121'
             description='Embedded Systems'
             skill={[
               'IoT devices',
               'ESP32 coding framework',
               'I2C Device Communication',
-            ]}
-          />
-          <Card
-            title='CSE 150'
-            description='Introduction to Computer Networks'
-            skill={[
-              'Protocols: HTTP, TCP, & DNS',
-              'Firewalls, Servers, & Cookies',
-              'L2/L3: WiFi, Ethernet, and BGP',
             ]}
           />
         </div>
@@ -78,12 +78,12 @@ function Courses() {
             ]}
           />
           <Card
-            title='ECE 118'
-            description='Mechatronics'
+            title='CSE 150'
+            description='Introduction to Computer Networks'
             skill={[
-              'CAD Design',
-              'Signals and Filtering',
-              'Mechatronic Design'
+              'Protocols: HTTP, TCP, & DNS',
+              'Firewalls, Servers, & Cookies',
+              'L2/L3: WiFi, Ethernet, and BGP',
             ]}
           />
         </div>
