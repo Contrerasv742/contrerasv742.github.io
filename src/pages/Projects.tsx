@@ -1,8 +1,8 @@
 import '../styles/Projects.css'
 
 import vault from '../assets/projects/vault.png'
-import slug_board from '../assets/projects/slug_board.png'
 import snacko from '../assets/projects/snacko.jpg'
+import jammer from '../assets/projects/jammer.png'
 
 interface CardProps {
   title: string;
@@ -32,24 +32,32 @@ function Projects() {
       <div className='project-container'>
         <div className='project-row'>
           <Card
-            title="Vault"
-            img={vault}
-            description="Hardware Password Manager"
-            url="https://github.com/contrerasv742/vault"
-          />
-          <Card
             title="Snackobato Assassino"
             img={snacko}
             description={"M&M Turret with target detection"}
             url="https://github.com/Contrerasv742/snackabato"
           />
           <Card
-            title="Slug Board"
-            img={slug_board}
-            description="UC Santa Cruz Social Media Application"
-            url="https://github.com/Contrerasv742/slug_board"
+            title="Vault"
+            img={vault}
+            description="Hardware Password Manager"
+            url="https://github.com/contrerasv742/vault"
+          />
+          <Card 
+            title="Jammer"
+            img={jammer}
+            description={"Street Camera (NIR) Jamming Device"}
+            url="https://github.com/Contrerasv742/jammer"
           />
         </div>
+        {/* <div className='project-row'> */}
+          {/* <Card */}
+          {/*   title="Slug Board" */}
+          {/*   img={slug_board} */}
+          {/*   description="UC Santa Cruz Social Media Application" */}
+          {/*   url="https://github.com/Contrerasv742/slug_board" */}
+          {/* /> */}
+        {/* </div> */}
       </div>
     </section>
   )
