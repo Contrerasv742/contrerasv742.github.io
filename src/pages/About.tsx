@@ -107,31 +107,36 @@ function About() {
           </div>
           <div className="about-text">
             <p>
-              I am a Computer Engineering graduate from UC Santa Cruz. I
-              have a concentration in Computer Network with a deep interest
-              in creating memory-safe C and C++ code.
+              I'm a Computer Engineering graduate from UC Santa Cruz, where
+              I completed all three concentration tracks: Systems 
+              Programming, Computer Systems, and Networking. My focus is 
+              low-level engineering close to the hardware — writing 
+              efficient, memory-safe C, C++, and Rust.
             </p>
             <br />
             <p>
-              I have lots of experience in creating rigorous networking
-              programs implementing protocols for HTTP, logging, and Proxy
-              servers. Many of these protocols I have implemented with threads,
-              making me profecient in thread safety, memory management, large
-              codebases, and program efficiency. 
+              I design and build embedded systems from the ground up. My 
+              projects range from fully 3D-printed autonomous robots running
+              ESP32 firmware to a hardware-backed password vault — giving m
+              hands-on experience with microcontrollers, motor and servo 
+              control, sensor integration, and the real-time firmware that
+              ties them together.
             </p>
             <br/>
 
             <p>
-              Additionally, I have relevant experience in embedded systems,
-              mechanical design, and hardware design. I learned these topics in
-              CSE 100 (Logic Design) and ECE 118 (Mechatronics).
+              On the networking side, I've built rigorous, protocol-level
+              systems in C — including HTTP, proxy, and logging servers — 
+              many of them multithreaded. That work made me proficient in 
+              thread safety, memory management, and writing efficient code 
+              within large codebases.
             </p>
             <br />
 
             <p>
-              In my free time I enjoy learning about cybersecurity and Linux
-              ricing. I use arch btw ;) I also dabble with baking and playing
-              the guitar.
+              Outside of engineering, I enjoy Linux customization (Arch, of
+              course), cycling, volunteering at my local bike shop, and 
+              playing guitar.
             </p>
           </div>
         </div>
